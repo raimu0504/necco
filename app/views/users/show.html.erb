@@ -1,0 +1,5 @@
+<h3>ユーザーページ</h3>
+<% @tweet.each do |tweet|%>
+<%= tweet.text %>
+<img src="<%= tweet.image %>">
+<% end %>
