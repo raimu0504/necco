@@ -1,0 +1,6 @@
+<h3>編集ページ</h3>
+<%=form_for(@tweet) do |f| %>
+<%=f.text_field :image,placeholder:"",value:@tweet.image %>
+<%=f.text_area :text,placeholder:"",value:@tweet.text %>
+<%= submit_tag "SENT", name: "SENT_button" %>
+<% end %>

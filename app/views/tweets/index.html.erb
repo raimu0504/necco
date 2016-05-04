@@ -1,4 +1,6 @@
 <% @tweet.each do |tweet|%>
 <%= tweet.text %>
 <img src="<%= tweet.image %>">
+<%=link_to"削除","tweets/#{tweet.id}",method: :delete %>
+<%=link_to"編集","tweets/#{tweet.id}/edit" %>
 <% end %>
