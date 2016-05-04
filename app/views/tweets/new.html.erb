@@ -1,0 +1,6 @@
+<h3>投稿ページ</h3>
+<%=form_for(@tweet) do |f| %>
+<%=f.text_field :image,placeholder:"画像のURL",value:"" %>
+<%=f.text_area :text,placeholder:"ツイート",value:"" %>
+<%= submit_tag "SENT", name: "SENT_button" %>
+<% end %>
