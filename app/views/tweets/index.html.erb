@@ -1,6 +1,8 @@
 <% @tweet.each do |tweet|%>
 <%= tweet.text %>
 <img src="<%= tweet.image %>">
+<%if user_signed_in? && current_user.id==tweet.user_id %>
 <%=link_to"削除","tweets/#{tweet.id}",method: :delete %>
 <%=link_to"編集","tweets/#{tweet.id}/edit" %>
+<% end %>
 <% end %>
