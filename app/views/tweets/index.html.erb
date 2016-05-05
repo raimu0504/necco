@@ -1,8 +1,35 @@
+
+<div class="container">
 <% @tweet.each do |tweet|%>
-<%= tweet.text %>
-<img src="<%= tweet.image %>">
-<%if user_signed_in? && current_user.id==tweet.user_id %>
-<%=link_to"削除","tweets/#{tweet.id}",method: :delete %>
-<%=link_to"編集","tweets/#{tweet.id}/edit" %>
+
+          <div class="col-md-6">
+                <!--Image Card-->
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="<%= tweet.image %>" class="img-responsive" alt="">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p><%= tweet.text %></p>
+                    </div>
+                    <!--Buttons-->
+                     <%if user_signed_in? && current_user.id==tweet.user_id %>
+                    <div class="card-btn text-center">
+                        <%=link_to"削除","tweets/#{tweet.id}",method: :delete,:class => 'btn btn-primary btn-md waves-effect waves-light' %>
+                        <%=link_to"編集","tweets/#{tweet.id}/edit",:class => 'btn btn-default btn-md waves-effect waves-light' %>
+                    </div>
+                    <!--/.Buttons-->
+                    <% end %>
+                </div>
+                <!--Image Card-->
+            </div>
+
 <% end %>
-<% end %>
+
+</div>
+
+
